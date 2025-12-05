@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "server:json": "json-server --watch movie_db.json --port 3001",
+    "server:api1": "uvicorn user_api:app --port 8001",
+    "server:api2": "uvicorn movie_api:app --port 8002",
+    "server:api3": "uvicorn rating_api:app --port 8003",
+    "server:api4": "uvicorn genre_api:app --port 8004",
+    "start": "concurrently \"npm run server:json\" \"npm run server:api1\" \"npm run server:api2\" \"npm run server:api3\" \"npm run server:api4\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
